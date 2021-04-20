@@ -1,5 +1,10 @@
-#IMPORTANT
-###CONFIG.JSON
+# IMPORTANT
+### CONFIG.JSON
 ```json
-asd
+{
+	"prefix": "!", <- YOUR PREFIX
+	"token": "", <- YOUR APP TOKEN
+	"devID": "" <- YOUR ID
+}
+
 ```

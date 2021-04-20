@@ -10,7 +10,7 @@
 ```
 ### COMMAND.JS
 ```js
-const Discord = require('discord.js') // <- AQUI ARRIBA SE DEFINEN LAS DEPENDECIAS
+const Discord = require('discord.js'); // <- AQUI ARRIBA SE DEFINEN LAS DEPENDECIAS
 module.exports = {
 	name: 'nombre del comando',
 	description: 'lo que hace el comando',

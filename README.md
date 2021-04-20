@@ -1,2 +1,5 @@
-//Discord bot base
-WIP
+#IMPORTANT
+###CONFIG.JSON
+```json
+asd
+```

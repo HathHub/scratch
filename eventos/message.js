@@ -1,5 +1,5 @@
 const Discord = require('discord.js');
-const { prefix } = require('../config.json');
+const { prefix, devID } = require('../config.json');
 
 module.exports = {
 	name: 'message',
@@ -31,7 +31,7 @@ module.exports = {
 		if(!command) return message.channel.send('el comando no existe');
 
 		if (command.guildOnly && message.channel.type === 'dm') {
-			return message.reply('I can\'t execute that command inside DMs!');
+			return message.reply('No es posible ejecutar ese comando dentro de DMs!');
 		}
 
 		if (command.permissions) {
@@ -40,7 +40,6 @@ module.exports = {
 				return message.reply('Necesitas el permiso ' + '`' + `${command.permissions}` + '`' + ' para hacer eso.');
 			}
 		}
-
 		// si no se especifico ningun argumento
 		if (command.args && !args.length) {
 			let reply = `No especificaste ningún argumento, ${message.author}!`;
@@ -53,10 +52,18 @@ module.exports = {
 
 		}
 
+		if (command.devOnly) {
+			if(devID.length === 0) return message.channel.send('El dueño del bot no ha especificado su `ID` aún así que esos comandos estan deshabilitados.');
+			if (message.author.id != devID) return message.channel.send(`Ese comando solo puede ser utilizado por el dueño del bot, ${message.author}`);
+
+		}
+
+
 		const { cooldowns } = message.client;
 
 		if (!cooldowns.has(command.name)) {
 			cooldowns.set(command.name, new Discord.Collection());
+
 		}
 
 		// eslint-disable-next-line no-unused-vars

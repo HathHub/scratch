@@ -1,2 +1,2 @@
-Discord bot base
+//Discord bot base
 WIP

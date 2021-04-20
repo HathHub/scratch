@@ -6,10 +6,11 @@ module.exports = {
 	args: true,
 	permissions: 'KICK_MEMBERS',
 	// eslint-disable-next-line no-unused-vars
-	execute(message, args) {
+	async execute(message, args) {
 
-		const taggedUser = message.mentions.users.first();
-
-		message.channel.send(`Has kickeado a  ${taggedUser.username}`);
+		const member = message.mentions.members.first();
+		const razon = args.slice(1).join(' ') ? args.slice(1).join(' ') : 'Razon sin especificar';
+		member.kick(razon);
+		message.channel.send('Usuario kickeado');
 	},
 };

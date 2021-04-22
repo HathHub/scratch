@@ -55,6 +55,41 @@ en el `mensajes.json` hay dos variables, english o español (puedes añadir cuan
 ```
 Ahí como se puede ver es todo identico excepto la primera variable, que es entre lo que el bot estara eligiendo, a su vez si tienes tu lenguaje en la db como `español` eligira la primera variable `español`, de otro modo eligira la de `english`, por ejemplo.
 Unicamente lo que hará es determinar tu lenguaje y hará que la variable `language` sea exportada como `mensajes.idioma`, siendo idioma español o english en este caso, de esa forma, todas las respuestas se cambiaran automaticamente.
+**EJEMPLO DE CONFIGURACIÓN DE MENSAJES.JSON**
+```js
+{
+    "english":{
+    "commands":{
+     "mute": {
+        "userMuted": "The user has been muted successfully" 
+     }
+    }
+    },
+    "español":{
+    "commands":{
+        "mute": {
+            "userMuted": "El usuario ha sido muteado con exito" 
+         }
+    }
+    }
+},
+"otro lenguaje (ejemplo) ":{
+    "commands":{
+        "mute": {
+            "userMuted": "texto en otro lenguaje" 
+         }
+    }
+    }
+}
+```
+**Luego en el MUTE.JS**
+```js
+let mencionado = message.mentions.members.first(); // el primer argumento es una mención
+let rol = message.guild.roles.cache.get("ID DEL ROL"); //Definimos el rol
+mencionado.roles.add(rol) // le añadimos el rol al usuario
+message.channel.send(language.commands.mute.userMuted); //enviamos que el usuario fue muteado
+```
+Luego de eso ya tendriamos nuestro sistema Multi Lenguaje configurado.
 **MESSAGE.JS (linea 1 - 10)**
 ```js
 const Discord = require('discord.js');

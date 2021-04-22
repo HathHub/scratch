@@ -5,7 +5,8 @@ module.exports = {
 	aliases: ['ping1', 'ping2'],
 	guildOnly: true,
 	cooldown: 5,
-	execute(message, args) {
-		message.channel.send('Pong.');
+	multiLanguage: true,
+	execute(message, args, language) {
+		message.channel.send(language.commands.ping.yes);
 	},
 };

@@ -1,8 +1,12 @@
 /* eslint-disable no-inline-comments */
 // evento personalizado no remover!!
-module.exports = (client, times) => {
-	if (times.ban) removeBan(client, times);
-	if (times.mute) removeMuted(client, times);
+module.exports = {
+	name: 'timers',
+	// eslint-disable-next-line no-unused-vars
+	execute(client, times) {
+		if (times.ban) removeBan(client, times);
+		if (times.mute) removeMuted(client, times);
+	},
 };
 
 async function removeBan(client, times) {

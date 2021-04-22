@@ -1,10 +1,13 @@
 const Discord = require('discord.js');
 const { prefix, devID } = require('../config.json');
+const mensajes = require('../mensajes.json');
+const { crearDB } = require('megadb');
+const account = new crearDB('cuenta', 'lenguaje');
 
 module.exports = {
 	name: 'message',
 	// eslint-disable-next-line no-unused-vars
-	execute(message) {
+	async execute(message) {
 		// ejemplo de evento message esto envia en la consola el nombre del autor del mensaje, lo que envio y donde lo envió
 		// si el usuario es un bot
 
@@ -82,9 +85,17 @@ module.exports = {
 
 		timestamps.set(message.author.id, now);
 		setTimeout(() => timestamps.delete(message.author.id), cooldownAmount);
+		const Cuenta = await account.get(message.author.id);
+		let language;
+		if (command.multiLanguage) {
+			language = mensajes.español;
 
+			if(Cuenta === 'english') {
+				language = mensajes.english;
+			}
+		}
 		try {
-			command.execute(message, args);
+			command.execute(message, args, language);
 		}
 		catch (error) {
 			console.error(error);

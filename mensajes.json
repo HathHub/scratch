@@ -1,0 +1,16 @@
+{
+    "english":{
+    "commands":{
+     "ping": {
+        "yes": "english" 
+     }
+    }
+    },
+    "español":{
+    "commands":{
+        "ping": {
+            "yes": "español" 
+         }
+    }
+    }
+}

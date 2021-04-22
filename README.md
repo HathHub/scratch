@@ -36,10 +36,10 @@ module.exports = {
 **MESSAGE.JS (linea 1 - 10)**
 ```js
 const Discord = require('discord.js');
-const { prefix, devID } = require('../../config.json');
-const mensajes = require('../mensajes.json');
-const { crearDB } = require('megadb');
-const account = new crearDB('cuenta', 'lenguaje');
+const { prefix, devID } = require('../../config.json'); // obtiene el prefix y la id del dueño de config.json
+const mensajes = require('../mensajes.json'); // obtiene los mensajes de mensajes.json
+const { crearDB } = require('megadb'); // modulo para almacenar el lenguaje de cada usuario
+const account = new crearDB('cuenta', 'lenguaje'); // la key por la que se obtiene el lenguaje del usuario
 
 module.exports = {
 	name: 'message',
@@ -50,14 +50,14 @@ module.exports = {
 ```js
 const Cuenta = await account.get(message.author.id);
 	let language;
-	if (command.multiLanguage) {
-	language = mensajes.español;
+	if (command.multiLanguage) { // si el comando tiene multiLanguage en true
+	language = mensajes.español; // lenguaje por default si no esta especificado en la base de datos
 
-	if(Cuenta === 'english') {
-	language = mensajes.english;
+	if(Cuenta === 'english') { // si el usuario tiene su lenguaje puesto en english (inglés)
+	language = mensajes.english; // hace que el lenguaje sea english
         }
         }
 	try {
-	command.execute(message, args, language);
+	command.execute(message, args, language); // exporta el lenguaje del usuario
 	}
 ```

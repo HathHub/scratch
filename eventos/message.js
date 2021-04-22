@@ -1,5 +1,5 @@
 const Discord = require('discord.js');
-const { prefix, devID } = require('../config.json');
+const { prefix, devID } = require('../../config.json');
 const mensajes = require('../mensajes.json');
 const { crearDB } = require('megadb');
 const account = new crearDB('cuenta', 'lenguaje');

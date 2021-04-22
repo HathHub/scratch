@@ -45,7 +45,7 @@ module.exports = {
 	name: 'message',
 	// eslint-disable-next-line no-unused-vars
 	async execute(message) {
-	```
+```
 **MESSAGE.JS (linea 89 - 100)**
 ```js
 const Cuenta = await account.get(message.author.id);

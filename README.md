@@ -33,3 +33,19 @@ module.exports = {
 };
 
 ```
+### LENGUAJES MULTIPLES
+**MESSAGE.JS (linea 89 - 100)**
+```js
+		const Cuenta = await account.get(message.author.id);
+		let language;
+		if (command.multiLanguage) {
+			language = mensajes.español;
+
+			if(Cuenta === 'english') {
+				language = mensajes.english;
+			}
+		}
+		try {
+			command.execute(message, args, language);
+		}
+```

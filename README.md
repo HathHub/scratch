@@ -10,7 +10,10 @@
 ```
 ### COMMAND.JS
 DATO: Cada campo en el que dice `true` se puede poner true o false                                                                                                                 
-OTRO DATO: en caso de que quieran usar el soporte multilenguaje en uno de los comandos deben exportar `language` -> ```js execute(message, args, language)```
+OTRO DATO: en caso de que quieran usar el soporte multilenguaje en uno de los comandos deben exportar `language` al igual que debajo;
+```js 
+execute(message, args, language)
+```
 ```js
 const Discord = require('discord.js'); // <- AQUI ARRIBA SE DEFINEN LAS DEPENDECIAS
 module.exports = {

@@ -31,7 +31,6 @@ module.exports = {
 		// ... <- CODIGO
 	},
 };
-
 ```
 ### LENGUAJES MULTIPLES - MESSAGE.JS
 **MESSAGE.JS (linea 1 - 10)**

@@ -33,6 +33,28 @@ module.exports = {
 };
 ```
 ### LENGUAJES MULTIPLES - MESSAGE.JS
+Este codigo lo que hara es cambiar el idioma de las respuestas del bot a cualquier idioma que tengas configurado, a tu gusto obviamente.
+en el `mensajes.json` hay dos variables, english o español (puedes añadir cuantas quieras), dentro de las mismas la variable commands donde se listan los comandos, en este caso a modo de ejemplo es el siguiente; (ping)
+```js
+{
+    "english":{
+    "commands":{
+     "ping": {
+        "yes": "english" 
+     }
+    }
+    },
+    "español":{
+    "commands":{
+        "ping": {
+            "yes": "español" 
+         }
+    }
+    }
+}
+```
+Ahí como se puede ver es todo identico excepto la primera variable, que es entre lo que el bot estara eligiendo, a su vez si tienes tu lenguaje en la db como `español` eligira la primera variable `español`, de otro modo eligira la de `english`, por ejemplo.
+Unicamente lo que hará es determinar tu lenguaje y hará que la variable `language` sea exportada como `mensajes.idioma`, siendo idioma español o english en este caso, de esa forma, todas las respuestas se cambiaran automaticamente.
 **MESSAGE.JS (linea 1 - 10)**
 ```js
 const Discord = require('discord.js');

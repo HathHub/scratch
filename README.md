@@ -43,8 +43,8 @@ const Cuenta = await account.get(message.author.id);
 
 	if(Cuenta === 'english') {
 	language = mensajes.english;
-  }
-}
+        }
+        }
 	try {
 	command.execute(message, args, language);
 	}

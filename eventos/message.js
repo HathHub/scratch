@@ -1,6 +1,5 @@
 const Discord = require('discord.js');
-const { prefix, devID } = require('../config.json');
-
+const { prefix, devID } = require('../../config.json');
 module.exports = {
 	name: 'message',
 	// eslint-disable-next-line no-unused-vars

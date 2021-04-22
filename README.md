@@ -33,7 +33,20 @@ module.exports = {
 };
 
 ```
-### LENGUAJES MULTIPLES
+### LENGUAJES MULTIPLES - MESSAGE.JS
+**MESSAGE.JS (linea 1 - 10)**
+```js
+const Discord = require('discord.js');
+const { prefix, devID } = require('../../config.json');
+const mensajes = require('../mensajes.json');
+const { crearDB } = require('megadb');
+const account = new crearDB('cuenta', 'lenguaje');
+
+module.exports = {
+	name: 'message',
+	// eslint-disable-next-line no-unused-vars
+	async execute(message) {
+	```
 **MESSAGE.JS (linea 89 - 100)**
 ```js
 const Cuenta = await account.get(message.author.id);

@@ -11,7 +11,7 @@ module.exports = {
 		if (!queue) return message.channel.send(`${message.client.emotes.error} | La queue esta vacia!`);
 		try {
 			message.client.distube.skip(message);
-			message.channel.send(`${message.client.emotes.success} | Skipeado! Ahora escuchando:\n${queue.songs[0].name}`);
+			message.channel.send(`${message.client.emotes.success} | Skipeado a: \`${queue.songs[0].name}\``);
 		}
 		catch (e) {
 			message.channel.send(`${message.client.emotes.error} | ${e}`);

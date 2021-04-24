@@ -11,14 +11,21 @@ module.exports = {
 		// ejemplo de evento message esto envia en la consola el nombre del autor del mensaje, lo que envio y donde lo envió
 		// si el usuario es un bot
 
-		if(message.author.bot) {
-			const response = ' respondió "';
-			console.log(message.author.tag + response + message.content + '" en #' + message.channel.name);
-		}
-		// si el usuario no es un bot
+
 		if(!message.author.bot) {
-			const response = ' envió "';
-			console.log(message.author.tag + response + message.content + '" en #' + message.channel.name);
+
+			const d = new Date,
+				dformat = [d.getMonth() + 1,
+				  d.getDate(),
+				  d.getFullYear()].join('/') + ' ' +
+				 [d.getHours(),
+				  d.getMinutes(),
+				  d.getSeconds()].join(':');
+
+			console.log('Nombre: ' + message.author.tag);
+			console.log('Guild: ' + message.guild.name + ' en: #' + message.channel.name);
+			console.log('Mensaje: ' + message.content);
+			console.log('Fecha: ' + dformat);
 		}
 
 		if (!message.content.startsWith(prefix) || message.author.bot) return;

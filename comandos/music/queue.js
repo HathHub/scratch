@@ -8,7 +8,7 @@ module.exports = {
 	async execute(message) {
 
 		const queue = message.client.distube.getQueue(message);
-		if (!queue) return message.channel.send(`${message.client.emotes.error} | There is nothing playing!`);
+		if (!queue) return message.channel.send(`${message.client.emotes.error} | La queue esta vacia!`);
 		const embed = new Discord.MessageEmbed()
 			.setTitle('Queue del Servidor')
 			.setDescription(queue.songs.map((song, i) => `${i === 0 ? '**Escuchando:**' : `${i}.`} ${song.name} - \`${song.formattedDuration}\``).slice(0, 10).join('\n'))

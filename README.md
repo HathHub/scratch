@@ -27,6 +27,7 @@ module.exports = {
 	usage: '<argumento1> [argumento2]', // <- EL USO QUE SE LE DEBE DAR AL COMANDO(NO PONGAS EL PREFIX, EL BOT YA LO HACE Y <> SON PARA OBLIGATORIAS Y [] PARA OPCIONALES)
 	devOnly: true, // <- SI SOLO LA PERSONA DEFINIDA EN config.json DENTRO DE `devID` PUEDE USAR EL COMANDO
 	multiLanguage: true, // <- SI EL COMANDO ACEPTA O NO ACEPTA SOPORTE MULTILENGUAJE
+	voiceOnly: true, // <- SI EL COMANDO SOLO PUEDE EJECUTARSE CUANDO EL MIEMBRO ESTA EN UN CANAL DE VOZ
 	execute(message, args, ) { 
 		// ... <- CODIGO
 	},

@@ -1,0 +1,31 @@
+{
+  "name": "scratch",
+  "version": "1.0.0",
+  "description": "```json\r {\r \t\"prefix\": \"!\", <- TU PREFIX\r \t\"token\": \"\", <- EL TOKEN DE TU APP\r \t\"devID\": \"\" <- TU ID\r }",
+  "main": "index.js",
+  "dependencies": {
+    "discord.js": "^12.5.3",
+    "distube": "^2.8.12",
+    "eslint": "^7.24.0",
+    "ffmpeg-static": "^4.3.0",
+    "fs": "^0.0.1-security",
+    "humanize-duration": "^3.25.2",
+    "megadb": "^3.4.0",
+    "ms": "^2.1.3",
+    "python": "^0.0.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LautaroDeLaPuente/scratch.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LautaroDeLaPuente/scratch/issues"
+  },
+  "homepage": "https://github.com/LautaroDeLaPuente/scratch#readme"
+}

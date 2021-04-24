@@ -1,5 +1,5 @@
 const Discord = require('discord.js');
-const { prefix, devID } = require('../../config.json');
+const { prefix, devID } = require('../config.json');
 const mensajes = require('../mensajes.json');
 const { crearDB } = require('megadb');
 const account = new crearDB('cuenta', 'lenguaje');
@@ -55,6 +55,9 @@ module.exports = {
 
 		}
 
+		if (command.voiceOnly && !message.member.voice.channel) return message.channel.send(`${message.client.emotes.error} | Debes estar en un canal de voz para hacer eso!`);
+
+
 		if (command.devOnly) {
 			if(devID.length === 0) return message.channel.send('El dueño del bot no ha especificado su `ID` aún así que esos comandos estan deshabilitados.');
 			if (message.author.id != devID) return message.channel.send(`Ese comando solo puede ser utilizado por el dueño del bot, ${message.author}`);
@@ -85,6 +88,7 @@ module.exports = {
 
 		timestamps.set(message.author.id, now);
 		setTimeout(() => timestamps.delete(message.author.id), cooldownAmount);
+
 		const Cuenta = await account.get(message.author.id);
 		let language;
 		if (command.multiLanguage) {

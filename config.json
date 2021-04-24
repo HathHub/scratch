@@ -1,5 +1,16 @@
 {
 	"prefix": "!",
-	"token": "YOUR TOKEN HERE",
-	"devID": ""
+	"token": "NzEwMjM2NzMzMjExNjcyNjkw.XrxhgA.vHEFwLt8V_viqt14KFt9x5RDl_M",
+	"devID": "696481341566615664",
+	"youtubeKey": "AIzaSyAOT95Zf0we5yrpvWrVZTMLKHtPo-aHWWw",
+	"emoji": {
+        "play": "▶️",
+        "stop": "⏹️",
+        "queue": "📄",
+        "success": "☑️",
+        "repeat": "🔁",
+        "error": "❌",
+		"pause": "⏸️",
+		"resume": "⏯️"
+    }
 }
